@@ -18,13 +18,16 @@
     <div class="birth-date">
       <span>Day</span>
       <input type="number" placeholder="DD" data-day-input>
+      <label class="invalid-day">Must be a valid day</label>
       <span>Month</span>
-      <input type="number" placeholder="MM">
+      <input type="number" placeholder="MM" data-month-input>
+      <label class="invalid-month">Must be a valid Month</label>
       <span>Year</span>
       <input type="number" placeholder="YYYY" data-year-input>
+      <label class="invalid-year">Must be in the past</label>
 
       <div class="line"></div>
-      <img src="../assets/img/icon-arrow.svg" alt=""></img>
+      <img src="../assets/img/icon-arrow.svg" alt="" data-age-input></img>
     </div>
 
     <div class="age-display">
@@ -33,5 +36,7 @@
       <p><span class="days">--</span> days</p>
     </div>
   </section>
+
+  <script src="./js/app.js"></script>
 </body>
 </html>
