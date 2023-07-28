@@ -1,43 +1,44 @@
+// Inputs
 const dayInput = document.querySelector('[data-day-input]')
 const monthInput = document.querySelector('[data-month-input]')
 const yearInput = document.querySelector('[data-year-input]')
+const ageClickInput = document.querySelector('[data-age-input]')
+
+// Display elements
 const dayDisplay = document.querySelector('.days')
 const monthDisplay = document.querySelector('.months')
 const yearDisplay = document.querySelector('.years')
-const ageInput = document.querySelector('[data-age-input]')
+
+// Error messages elements
 const invalidDay = document.querySelector('.invalid-day')
 const invalidMonth = document.querySelector('.invalid-month')
 const invalidYear = document.querySelector('.invalid-year')
 
-const validateAge = () => {
-  const currentDate = new Date()
-  const year = currentDate.getFullYear()
-
-  const inputDate = new Date(yearValue, monthValue - 1, dayValue)
-  const diffInMilliseconds = currentDate - inputDate
-  const ageDate = new Date(diffInMilliseconds)
-
-  const totalYears = ageDate.getUTCFullYear() - 1970
-  const totalMonths = ageDate.getUTCMonth()
-  const totalDays = ageDate.getUTCDate() - 1
-
-  if (dayValue < 1 || dayValue > 31) {
+// Function responsible for validating the day input
+const validateDay = (totalDays) => {
+  if (isNaN(totalDays) || totalDays < 1 || totalDays > 31) {
     invalidDay.style.display = 'inline-block'
     dayDisplay.innerHTML = '--'
   } else {
     invalidDay.style.display = 'none'
     dayDisplay.innerHTML = totalDays
   }
-  
-  if (monthValue < 1 || monthValue > 12) {
+}
+
+// Function responsible for validating the month input
+const validateMonth = (totalMonths) => {
+  if (isNaN(totalMonths) || totalMonths < 1 || totalMonths > 12) {
     invalidMonth.style.display = 'inline-block'
     monthDisplay.innerHTML = '--'
   } else {
     invalidMonth.style.display = 'none'
     monthDisplay.innerHTML = totalMonths
   }
-  
-  if (yearValue > year) {
+}
+
+// Function responsible for validating the year input
+const validateYear = (totalYears, currentYear) => {
+  if (isNaN(totalYears) || totalYears > currentYear || totalYears < 0) {
     invalidYear.style.display = 'inline-block'
     yearDisplay.innerHTML = '--'
   } else {
@@ -46,6 +47,25 @@ const validateAge = () => {
   }
 }
 
+// Function responsible for validating the user's age
+const validateAge = () => {
+  const currentDate = new Date()
+  const currentYear = currentDate.getFullYear()
+  const inputDate = new Date(yearValue, monthValue - 1, dayValue)
+
+  const diffInMilliseconds = currentDate - inputDate
+  const ageDate = new Date(diffInMilliseconds)
+  
+  const totalYears = ageDate.getUTCFullYear() - 1970
+  const totalMonths = ageDate.getUTCMonth()
+  const totalDays = ageDate.getUTCDate() - 1
+
+  validateDay(totalDays)
+  validateMonth(totalMonths)
+  validateYear(totalYears, currentYear)
+}
+
+// Function responsible for getting the input values and displaying them on the HTML layout
 const getUserAge = () => {
   dayValue = parseFloat(dayInput.value)
   monthValue = parseFloat(monthInput.value)
@@ -58,4 +78,4 @@ const getUserAge = () => {
   validateAge()
 }
 
-ageInput.addEventListener('click', getUserAge)
+ageClickInput.addEventListener('click', getUserAge)
