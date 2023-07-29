@@ -38,7 +38,7 @@ body {
   flex-direction: column;
   background-color: var(--white-color);
   border-radius: 18px;
-  border-bottom-right-radius: 110px;
+  border-bottom-right-radius: 120px;
   padding: 30px;
 }
 
@@ -55,12 +55,15 @@ body {
   grid-row: 2;
   padding: 10px;
   max-width: 140px;
-  border: 1px var(--light-grey-color) solid;
+  border: 1px solid var(--light-grey-color);
+  color: var(--off-black-color);
+  font-size: 1.2rem;
+  font-weight: var(--bold-fw);
+  font-family: var(--font-family);
   border-radius: 6px;
 }
 
-.birth-date input::placeholder,
-.birth-date input {
+.birth-date input::placeholder {
   font-size: 1.2rem;
   font-weight: var(--bold-fw);
   font-family: var(--font-family);
@@ -98,7 +101,7 @@ body {
 .age-display {
   font-size: 4.2rem;
   font-style: italic;
-  font-weight: var(--bold-fw);
+  font-weight: var(--extra-bold-fw);
   line-height: 70px;
   padding-bottom: 15px;
 }
@@ -117,4 +120,9 @@ body {
   font-style: italic;
   font-size: 10px;
   display: none;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
 }

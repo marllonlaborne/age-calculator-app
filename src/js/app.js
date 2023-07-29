@@ -16,33 +16,51 @@ const invalidYear = document.querySelector('.invalid-year')
 
 // Function responsible for validating the day input
 const validateDay = (totalDays) => {
+  const prevElement = dayInput.previousElementSibling
+  
   if (isNaN(totalDays) || totalDays < 1 || totalDays > 31) {
     invalidDay.style.display = 'inline-block'
+    dayInput.style.border = '1px solid var(--error-color)'
+    prevElement.style.color = 'var(--error-color)'
     dayDisplay.innerHTML = '--'
   } else {
     invalidDay.style.display = 'none'
+    dayInput.style.border = '1px solid var(--light-grey-color)'
+    prevElement.style.color = 'var(--smokey-grey-color)'
     dayDisplay.innerHTML = totalDays
   }
 }
 
 // Function responsible for validating the month input
 const validateMonth = (totalMonths) => {
+  const prevElement = monthInput.previousElementSibling
+
   if (isNaN(totalMonths) || totalMonths < 1 || totalMonths > 12) {
     invalidMonth.style.display = 'inline-block'
+    monthInput.style.border = '1px solid var(--error-color)'
+    prevElement.style.color = 'var(--error-color)'
     monthDisplay.innerHTML = '--'
   } else {
     invalidMonth.style.display = 'none'
+    monthInput.style.border = '1px solid var(--light-grey-color)'
+    prevElement.style.color = 'var(--smokey-grey-color)'
     monthDisplay.innerHTML = totalMonths
   }
 }
 
 // Function responsible for validating the year input
 const validateYear = (totalYears, currentYear) => {
+  const prevElement = yearInput.previousElementSibling
+  
   if (isNaN(totalYears) || totalYears > currentYear || totalYears < 0) {
     invalidYear.style.display = 'inline-block'
+    yearInput.style.border = '1px solid var(--error-color)'
+    prevElement.style.color = 'var(--error-color)'
     yearDisplay.innerHTML = '--'
   } else {
     invalidYear.style.display = 'none'
+    yearInput.style.border = '1px solid var(--light-grey-color)'
+    prevElement.style.color = 'var(--smokey-grey-color)'
     yearDisplay.innerHTML = totalYears
   }
 }
