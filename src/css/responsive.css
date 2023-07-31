@@ -1,0 +1,40 @@
+@media (max-width: 600px) {
+  .app-container {
+    padding: 30px;
+  }
+  .birth-date {
+    padding: 6px 0;
+    row-gap: 6px;
+    column-gap: 6px;
+    grid-template-columns: repeat(3, 110px);
+  }
+  .birth-date input {
+    max-width: 100px;
+  }
+  .birth-date img {
+    place-self: center;
+    grid-column: 2;
+    margin: 30px 0;
+  }
+  .birth-date span {
+    font-size: 12px;
+  }
+  .birth-date .line::before {
+    width: 96.9%;
+    top: 68.3%;
+    height: 2px;
+  }
+  .age-display {
+    font-size: 3.5rem;
+    line-height: 65px;
+  }
+  .invalid-day,
+  .invalid-month,
+  .invalid-year {
+    grid-row: 3;
+    font-size: 9px;
+  }
+  .invalid-month {
+    grid-column: 2;
+  }
+}
