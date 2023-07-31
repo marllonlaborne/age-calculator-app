@@ -8,6 +8,7 @@ const ageClickInput = document.querySelector('[data-age-input]')
 const dayDisplay = document.querySelector('.days')
 const monthDisplay = document.querySelector('.months')
 const yearDisplay = document.querySelector('.years')
+const numbersDisplay = document.querySelectorAll('[data-number]')
 
 // Error messages elements
 const invalidDay = document.querySelector('.invalid-day')
@@ -81,6 +82,26 @@ const validateAge = () => {
   validateDay(totalDays)
   validateMonth(totalMonths)
   validateYear(totalYears, currentYear)
+
+  numbersAnimation(totalYears, yearDisplay)
+  numbersAnimation(totalMonths, monthDisplay)
+  numbersAnimation(totalDays, dayDisplay)
+}
+
+
+const numbersAnimation = (total, number) => {
+  const increment = Math.ceil(total / 100)
+  let start = 0
+
+  const timer = setInterval(() => {
+    start += increment
+    number.innerText = start
+
+    if (start >= total) {
+      number.innerText = total
+      clearInterval(timer)
+    }
+  }, 100 * Math.random())
 }
 
 // Function responsible for getting the input values and displaying them on the HTML layout
