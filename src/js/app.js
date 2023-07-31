@@ -88,7 +88,7 @@ const validateAge = () => {
   numbersAnimation(totalDays, dayDisplay)
 }
 
-
+// Function responsible for animating the display age numbers
 const numbersAnimation = (total, number) => {
   const increment = Math.ceil(total / 100)
   let start = 0
