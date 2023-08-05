@@ -2,6 +2,7 @@
   /* Colors */
   --primary-color: hsl(259, 100%, 65%);
   --error-color: hsl(0, 100%, 67%);
+  --hover-color: hsl(259, 96%, 73%);
 
   /* Neutral */
   --white-color: hsl(0, 0%, 100%);
@@ -87,6 +88,11 @@ body {
   background-color: var(--primary-color);
   cursor: pointer;
   z-index: 0;
+}
+
+.birth-date img:hover {
+  background-color: var(--hover-color);
+  transition: all .4s ease-in-out;
 }
 
 .birth-date .line::before {
