@@ -79,9 +79,9 @@ const validateAge = () => {
   const totalMonths = ageDate.getUTCMonth()
   const totalDays = ageDate.getUTCDate() - 1
 
-  validateDay(totalDays)
-  validateMonth(totalMonths)
-  validateYear(totalYears, currentYear)
+  validateInput(totalDays, 0, 30, dayInput, dayDisplay, errorDayMessage)
+  validateInput(totalMonths + 1, 1, 12, monthInput, monthDisplay, errorMonthMessage)
+  validateInput(totalYears, 0, currentYear, yearInput, yearDisplay, errorYearMessage)
 
   numbersAnimation(totalYears, yearDisplay)
   numbersAnimation(totalMonths, monthDisplay)
