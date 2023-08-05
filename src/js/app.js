@@ -106,9 +106,9 @@ const animateNumbers = (total, number) => {
 
 // Function responsible for getting the input values and displaying them on the HTML layout
 const getUserAge = () => {
-  dayValue = parseFloat(dayInput.value)
-  monthValue = parseFloat(monthInput.value)
-  yearValue = parseFloat(yearInput.value)
+  dayValue = dayInput.value
+  monthValue = monthInput.value
+  yearValue = yearInput.value
   
   dayDisplay.innerHTML = dayValue
   monthDisplay.innerHTML = monthValue
