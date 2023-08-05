@@ -15,10 +15,10 @@ const invalidDay = document.querySelector('.invalid-day')
 const invalidMonth = document.querySelector('.invalid-month')
 const invalidYear = document.querySelector('.invalid-year')
 
-// Function responsible for validating the day input
-const validateDay = (totalDays) => {
-  const prevElement = dayInput.previousElementSibling
-  
+// Function responsible for validating the input values
+const validateInput = (value, minValue, maxValue, inputElement, displayElement, errorMessageElement) => {
+  const isInputInvalid = isNaN(value) || value < minValue || value > maxValue
+
   if (isNaN(totalDays) || totalDays < 1 || totalDays > 31) {
     invalidDay.style.display = 'inline-block'
     dayInput.style.border = '1px solid var(--error-color)'
