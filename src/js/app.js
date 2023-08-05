@@ -83,13 +83,13 @@ const validateAge = () => {
   validateInput(totalMonths + 1, 1, 12, monthInput, monthDisplay, errorMonthMessage)
   validateInput(totalYears, 0, currentYear, yearInput, yearDisplay, errorYearMessage)
 
-  numbersAnimation(totalYears, yearDisplay)
-  numbersAnimation(totalMonths, monthDisplay)
-  numbersAnimation(totalDays, dayDisplay)
+  animateNumbers(totalYears, yearDisplay)
+  animateNumbers(totalMonths, monthDisplay)
+  animateNumbers(totalDays, dayDisplay)
 }
 
 // Function responsible for animating the display age numbers
-const numbersAnimation = (total, number) => {
+const animateNumbers = (total, number) => {
   const increment = Math.ceil(total / 100)
   let start = 0
 
