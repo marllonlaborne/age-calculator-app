@@ -19,50 +19,14 @@ const invalidYear = document.querySelector('.invalid-year')
 const validateInput = (value, minValue, maxValue, inputElement, displayElement, errorMessageElement) => {
   const isInputInvalid = isNaN(value) || value < minValue || value > maxValue
 
-  if (isNaN(totalDays) || totalDays < 1 || totalDays > 31) {
-    invalidDay.style.display = 'inline-block'
-    dayInput.style.border = '1px solid var(--error-color)'
-    prevElement.style.color = 'var(--error-color)'
-    dayDisplay.innerHTML = '--'
+  if (isInputInvalid) {
+    errorMessageElement.style.display = 'inline-block'
+    inputElement.style.border = '1px solid var(--error-color)'
+    displayElement.innerHTML = '--'
   } else {
-    invalidDay.style.display = 'none'
-    dayInput.style.border = '1px solid var(--light-grey-color)'
-    prevElement.style.color = 'var(--smokey-grey-color)'
-    dayDisplay.innerHTML = totalDays
-  }
-}
-
-// Function responsible for validating the month input
-const validateMonth = (totalMonths) => {
-  const prevElement = monthInput.previousElementSibling
-
-  if (isNaN(totalMonths) || totalMonths < 1 || totalMonths > 12) {
-    invalidMonth.style.display = 'inline-block'
-    monthInput.style.border = '1px solid var(--error-color)'
-    prevElement.style.color = 'var(--error-color)'
-    monthDisplay.innerHTML = '--'
-  } else {
-    invalidMonth.style.display = 'none'
-    monthInput.style.border = '1px solid var(--light-grey-color)'
-    prevElement.style.color = 'var(--smokey-grey-color)'
-    monthDisplay.innerHTML = totalMonths
-  }
-}
-
-// Function responsible for validating the year input
-const validateYear = (totalYears, currentYear) => {
-  const prevElement = yearInput.previousElementSibling
-  
-  if (isNaN(totalYears) || totalYears > currentYear || totalYears < 0) {
-    invalidYear.style.display = 'inline-block'
-    yearInput.style.border = '1px solid var(--error-color)'
-    prevElement.style.color = 'var(--error-color)'
-    yearDisplay.innerHTML = '--'
-  } else {
-    invalidYear.style.display = 'none'
-    yearInput.style.border = '1px solid var(--light-grey-color)'
-    prevElement.style.color = 'var(--smokey-grey-color)'
-    yearDisplay.innerHTML = totalYears
+    errorMessageElement.style.display = 'none'
+    inputElement.style.border = '1px solid var(--light-grey-color)'
+    displayElement.innerHTML = value
   }
 }
 
@@ -70,11 +34,11 @@ const validateYear = (totalYears, currentYear) => {
 const validateAge = () => {
   const currentDate = new Date()
   const currentYear = currentDate.getFullYear()
+  
   const inputDate = new Date(yearValue, monthValue - 1, dayValue)
-
   const diffInMilliseconds = currentDate - inputDate
   const ageDate = new Date(diffInMilliseconds)
-  
+
   const totalYears = ageDate.getUTCFullYear() - 1970
   const totalMonths = ageDate.getUTCMonth()
   const totalDays = ageDate.getUTCDate() - 1
