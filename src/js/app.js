@@ -2,7 +2,7 @@
 const dayInput = document.querySelector('[data-day-input]')
 const monthInput = document.querySelector('[data-month-input]')
 const yearInput = document.querySelector('[data-year-input]')
-const ageClickInput = document.querySelector('[data-age-input]')
+const calculateButton = document.querySelector('[data-age-input]')
 
 // Display elements
 const dayDisplay = document.querySelector('.days')
@@ -11,9 +11,9 @@ const yearDisplay = document.querySelector('.years')
 const numbersDisplay = document.querySelectorAll('[data-number]')
 
 // Error messages elements
-const invalidDay = document.querySelector('.invalid-day')
-const invalidMonth = document.querySelector('.invalid-month')
-const invalidYear = document.querySelector('.invalid-year')
+const errorDayMessage = document.querySelector('.invalid-day')
+const errorMonthMessage = document.querySelector('.invalid-month')
+const errorYearMessage = document.querySelector('.invalid-year')
 
 // Function responsible for validating the input values
 const validateInput = (value, minValue, maxValue, inputElement, displayElement, errorMessageElement) => {
@@ -81,4 +81,4 @@ const getUserAge = () => {
   validateAge()
 }
 
-ageClickInput.addEventListener('click', getUserAge)
+calculateButton.addEventListener('click', getUserAge)
