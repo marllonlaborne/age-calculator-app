@@ -1,0 +1,13 @@
+/* Base */
+@import './styles/base/reset.css';
+@import './styles/base/typography.css';
+@import './styles/base/colors.css';
+@import './styles/base/fonts.css';
+@import './styles/base/helpers.css';
+
+/* Elements */
+@import './styles/elements/birth-inputs.css';
+@import './styles/elements/age-calculate-button.css';
+
+/* Layouts */
+@import './styles/layout/age-calculator.css';

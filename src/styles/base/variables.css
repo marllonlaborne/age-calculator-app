@@ -1,0 +1,16 @@
+:root {
+  /* Main colors */
+  --primary-color: hsl(259, 100%, 65%);
+  --error-color: hsl(0, 100%, 67%);
+  --hover-color: hsl(259, 96%, 73%);
+
+  /* Neutral colors */
+  --white-color: hsl(0, 0%, 100%);
+  --off-white-color: hsl(0, 0%, 94%);
+  --light-grey-color: hsl(0, 0%, 86%);
+  --smokey-grey-color: hsl(0, 1%, 44%);
+  --off-black-color: hsl(0, 0%, 8%);
+
+  /* Typography */
+  --font-family: 'Poppins', sans-serif;
+}

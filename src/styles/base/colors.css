@@ -1,0 +1,47 @@
+@import './variables.css';
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.error-color {
+  color: var(--error-color);
+}
+
+.hover-color {
+  color: var(--hover-color);
+}
+
+.white-color {
+  color: var(--white-color);
+}
+
+.off-white-color {
+  color: var(--off-white-color);
+}
+
+.off-black-color {
+  color: var(--off-black-color);
+}
+
+.light-grey-color {
+  color: var(--light-grey-color);
+}
+
+.smokey-grey-color {
+  color: var(--smokey-grey-color);
+}
+
+/* Background */
+
+.white-color-bg {
+  background-color: var(--white-color);
+}
+
+.off-white-color-bg {
+  background-color: var(--off-white-color);
+}
+
+.smokey-grey-color-bg {
+  background-color: var(--smokey-grey-color);
+}

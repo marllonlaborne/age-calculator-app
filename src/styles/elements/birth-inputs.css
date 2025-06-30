@@ -1,0 +1,39 @@
+.birth-inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  padding: 1.25rem 8rem 1.25rem 0;
+}
+
+.birth-inputs div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.birth-inputs label {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.birth-inputs input {
+  width: 7rem;
+  border: 1px solid var(--light-grey-color);
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.birth-inputs input::placeholder {
+  font-family: 'Poppins', sans-serif;
+}
+
+.birth-inputs input:focus {
+  border: 1px solid;
+  border-color: var(--primary-color);
+  outline: none;
+}

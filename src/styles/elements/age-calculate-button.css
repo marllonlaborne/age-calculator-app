@@ -1,0 +1,25 @@
+.age-calculate {
+  width: 97%;
+  display: flex;
+  justify-content: end;
+}
+
+.age-calculate-button {
+  border-radius: 50%;
+  padding: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.age-calculate span {
+  content: '-';
+  background-color: var(--light-grey-color);
+  width: 100%;
+  margin-top: 8%;
+  height: 2px;
+}
+
+.age-calculate-button:hover {
+  transition: 200ms all ease-in-out;
+  background-color: var(--primary-color);
+}
