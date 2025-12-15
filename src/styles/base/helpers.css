@@ -5,3 +5,8 @@
   justify-content: center;
   align-items: center;
 }
+
+.error-message {
+  font-family: 'Poppins', sans-serif;
+  color: red;
+}
