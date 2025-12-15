@@ -1,3 +1,6 @@
+import AgeCalculateButton from './components/elements/AgeCalculateButton'
+import BirthInputs from './components/widgets/BirthInputs'
+import DisplayAge from './components/widgets/DisplayAge'
 import animateNumbers from './libs/animateNumbers'
 import { useRef, useState } from 'react'
 import './index.css'
@@ -48,74 +51,25 @@ const App = () => {
   return (
     <main className="container off-white-color-bg">
       <section className="age-calculator white-color-bg">
-        <div className="birth-inputs">
-          <div>
-            <label className="font-base">Day</label>
-            <input
-              type="number"
-              placeholder="DD"
-              value={day}
-              onChange={(event) => setDay(event.target.value)}
-              min="1"
-              max="31"
-            />
-          </div>
+        <BirthInputs
+          day={day}
+          month={month}
+          year={year}
+          setDay={setDay}
+          setMonth={setMonth}
+          setYear={setYear}
+        />
 
-          <div>
-            <label className="font-base">Month</label>
-            <input
-              type="number"
-              placeholder="MM"
-              value={month}
-              onChange={(event) => setMonth(event.target.value)}
-              min="1"
-              max="12"
-            />
-          </div>
+        <AgeCalculateButton getUserAge={getUserAge} />
 
-          <div>
-            <label className="font-base">Year</label>
-            <input
-              type="number"
-              placeholder="YYYY"
-              value={year}
-              onChange={(event) => setYear(event.target.value)}
-              min="1900"
-              max={new Date().getFullYear()}
-            />
-          </div>
-        </div>
-
-        <div className="age-calculate">
-          <span></span>
-          <button
-            className="age-calculate-button smokey-grey-color-bg"
-            onClick={getUserAge}
-          >
-            <img className="" src="./assets/img/icon-arrow.svg" alt="" />
-          </button>
-        </div>
-
-        <div className="display-age">
-          <p className="font-xl">
-            <span className="primary-color" ref={yearsRef}>
-              {ageYears}
-            </span>{' '}
-            years
-          </p>
-          <p className="font-xl">
-            <span className="primary-color" ref={monthsRef}>
-              {ageMonths}
-            </span>{' '}
-            months
-          </p>
-          <p className="font-xl">
-            <span className="primary-color" ref={daysRef}>
-              {ageDays}
-            </span>{' '}
-            days
-          </p>
-        </div>
+        <DisplayAge
+          ageDays={ageDays}
+          ageMonths={ageMonths}
+          ageYears={ageYears}
+          daysRef={daysRef}
+          monthsRef={monthsRef}
+          yearsRef={yearsRef}
+        />
       </section>
     </main>
   )
